@@ -1,9 +1,21 @@
 version: '3'
-bilsynapi:
+services:
   bilsynapi:
-    image: xkaas/bilapi:latest
+    image: ghcr.io/kevinvincentals/bilsynapi-python-flask:latest
     restart: unless-stopped
-  environment:
-    - token=<insert bearer token from bilsyn api>
-  ports:
-    - '5000:5000'
+    environment:
+       - token=<insert bearer token here>
+    ports:
+       - '5000:5000'
+    labels:
+       - "com.centurylinklabs.watchtower.scope=bilsynapi"
+
+  watchtower:
+    image: containrrr/watchtower
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 30 --scope bilsynapi
+    labels:
+      - "com.centurylinklabs.watchtower.scope=bilsynapi"
+
