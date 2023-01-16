@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <title>{{ answer[2] }} - Nummerplade opslag</title>
+      <!-- Bootstrap CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+      <script src="https:////cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <style>
+         .licenseplate {
+         color: #333;
+         background-color: #fff;
+         background-image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgaWQ9IkRLRVUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMDkuNzQxMTYsLTMyMC43MDMzNCkiPjxyZWN0IHN0eWxlPSJmaWxsOiMwNTY4OWY7ZmlsbC1vcGFjaXR5OjE7IiBpZD0icmVjdDM2ODIiIHdpZHRoPSI1NC42NDI4NTciIGhlaWdodD0iMTMwLjAxNjYiIHg9IjEwOS43NDExNiIgeT0iMzIwLjcwMzM0Ii8+PGcgaWQ9InN0YXJzIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyLjI5ODA5NywwKSI+PHBhdGggdHJhbnNmb3JtPSJtYXRyaXgoMS4xOTIzMDk4LC0wLjA4Mjg4MTUzLDAuMDgwODI1NjYsMS4yMjI2MzcyLDYxLjI3MDA3LC05NC42MDk5NTUpIiBkPSJtIDM3LjY3ODU3LDM1Ny43MTkzMSAtMC45NTE1MzUsLTAuNTg4MyAtMS4wMjQwNjYsMC40NTAzNCAwLjI2NTQ2NCwtMS4wODY3NiAtMC43NDQ3NSwtMC44MzQ3OCAxLjExNTYwMiwtMC4wODMzIDAuNTYzNzg1LC0wLjk2NjI3IDAuNDI0MDE1LDEuMDM1MjUgMS4wOTMxODgsMC4yMzc2IC0wLjg1MzU0NSwwLjcyMzE3IHoiIGlkPSJwYXRoMzY4NCIgc3R5bGU9ImZpbGw6I2ZmZmYwMDtmaWxsLW9wYWNpdHk6MTsiLz48cGF0aCB0cmFuc2Zvcm09Im1hdHJpeCgxLjE5MjMwOTgsLTAuMDgyODgxNTMsMC4wODA4MjU2NiwxLjIyMjYzNzIsNzAuOTI2MzIsLTkyLjQyMjQ2NSkiIGQ9Im0gMzcuNjc4NTcsMzU3LjcxOTMxIC0wLjk1MTUzNSwtMC41ODgzIC0xLjAyNDA2NiwwLjQ1MDM0IDAuMjY1NDY0LC0xLjA4Njc2IC0wLjc0NDc1LC0wLjgzNDc4IDEuMTE1NjAyLC0wLjA4MzMgMC41NjM3ODUsLTAuOTY2MjcgMC40MjQwMTUsMS4wMzUyNSAxLjA5MzE4OCwwLjIzNzYgLTAuODUzNTQ1LDAuNzIzMTcgeiIgaWQ9InBhdGgzNjg0LTAiIHN0eWxlPSJmaWxsOiNmZmZmMDA7ZmlsbC1vcGFjaXR5OjE7Ii8+PHBhdGggdHJhbnNmb3JtPSJtYXRyaXgoMS4xOTIzMDk4LC0wLjA4Mjg4MTUzLDAuMDgwODI1NjYsMS4yMjI2MzcyLDUxLjg2MzgyLC05Mi40MjI0NjUpIiBkPSJtIDM3LjY3ODU3LDM1Ny43MTkzMSAtMC45NTE1MzUsLTAuNTg4MyAtMS4wMjQwNjYsMC40NTAzNCAwLjI2NTQ2NCwtMS4wODY3NiAtMC43NDQ3NSwtMC44MzQ3OCAxLjExNTYwMiwtMC4wODMzIDAuNTYzNzg1LC0wLjk2NjI3IDAuNDI0MDE1LDEuMDM1MjUgMS4wOTMxODgsMC4yMzc2IC0wLjg1MzU0NSwwLjcyMzE3IHoiIGlkPSJwYXRoMzY4NC0wLTkiIHN0eWxlPSJmaWxsOiNmZmZmMDA7ZmlsbC1vcGFjaXR5OjE7Ii8+PHBhdGggdHJhbnNmb3JtPSJtYXRyaXgoMS4xOTIzMDk4LC0wLjA4Mjg4MTUzLDAuMDgwODI1NjYsMS4yMjI2MzcyLDc3LjMwMTMyLC04NS42NDEyMTUpIiBkPSJtIDM3LjY3ODU3LDM1Ny43MTkzMSAtMC45NTE1MzUsLTAuNTg4MyAtMS4wMjQwNjYsMC40NTAzNCAwLjI2NTQ2NCwtMS4wODY3NiAtMC43NDQ3NSwtMC44MzQ3OCAxLjExNTYwMiwtMC4wODMzIDAuNTYzNzg1LC0wLjk2NjI3IDAuNDI0MDE1LDEuMDM1MjUgMS4wOTMxODgsMC4yMzc2IC0wLjg1MzU0NSwwLjcyMzE3IHoiIGlkPSJwYXRoMzY4NC0wLTQiIHN0eWxlPSJmaWxsOiNmZmZmMDA7ZmlsbC1vcGFjaXR5OjE7Ii8+PHBhdGggdHJhbnNmb3JtPSJtYXRyaXgoMS4xOTIzMDk4LC0wLjA4Mjg4MTUzLDAuMDgwODI1NjYsMS4yMjI2MzcyLDQ1LjIzODgyLC04NS42NDEyMTUpIiBkPSJtIDM3LjY3ODU3LDM1Ny43MTkzMSAtMC45NTE1MzUsLTAuNTg4MyAtMS4wMjQwNjYsMC40NTAzNCAwLjI2NTQ2NCwtMS4wODY3NiAtMC43NDQ3NSwtMC44MzQ3OCAxLjExNTYwMiwtMC4wODMzIDAuNTYzNzg1LC0wLjk2NjI3IDAuNDI0MDE1LDEuMDM1MjUgMS4wOTMxODgsMC4yMzc2IC0wLjg1MzU0NSwwLjcyMzE3IHoiIGlkPSJwYXRoMzY4NC0wLTktOCIgc3R5bGU9ImZpbGw6I2ZmZmYwMDtmaWxsLW9wYWNpdHk6MTsiLz48cGF0aCB0cmFuc2Zvcm09Im1hdHJpeCgxLjE5MjMwOTgsLTAuMDgyODgxNTMsMC4wODA4MjU2NiwxLjIyMjYzNzIsNzkuOTg4ODIsLTc1Ljc2NjIxNSkiIGQ9Im0gMzcuNjc4NTcsMzU3LjcxOTMxIC0wLjk1MTUzNSwtMC41ODgzIC0xLjAyNDA2NiwwLjQ1MDM0IDAuMjY1NDY0LC0xLjA4Njc2IC0wLjc0NDc1LC0wLjgzNDc4IDEuMTE1NjAyLC0wLjA4MzMgMC41NjM3ODUsLTAuOTY2MjcgMC40MjQwMTUsMS4wMzUyNSAxLjA5MzE4OCwwLjIzNzYgLTAuODUzNTQ1LDAuNzIzMTcgeiIgaWQ9InBhdGgzNjg0LTAtNC0yIiBzdHlsZT0iZmlsbDojZmZmZjAwO2ZpbGwtb3BhY2l0eToxOyIvPjxwYXRoIHRyYW5zZm9ybT0ibWF0cml4KDEuMTkyMzA5OCwtMC4wODI4ODE1MywwLjA4MDgyNTY2LDEuMjIyNjM3Miw0Mi45MjYzMiwtNzUuNzY2MjE1KSIgZD0ibSAzNy42Nzg1NywzNTcuNzE5MzEgLTAuOTUxNTM1LC0wLjU4ODMgLTEuMDI0MDY2LDAuNDUwMzQgMC4yNjU0NjQsLTEuMDg2NzYgLTAuNzQ0NzUsLTAuODM0NzggMS4xMTU2MDIsLTAuMDgzMyAwLjU2Mzc4NSwtMC45NjYyNyAwLjQyNDAxNSwxLjAzNTI1IDEuMDkzMTg4LDAuMjM3NiAtMC44NTM1NDUsMC43MjMxNyB6IiBpZD0icGF0aDM2ODQtMC05LTgtNCIgc3R5bGU9ImZpbGw6I2ZmZmYwMDtmaWxsLW9wYWNpdHk6MTsiLz48cGF0aCB0cmFuc2Zvcm09Im1hdHJpeCgxLjE5MjMwOTgsLTAuMDgyODgxNTMsMC4wODA4MjU2NiwxLjIyMjYzNzIsNzcuODAxMzIsLTY2LjI2NjIxNSkiIGQ9Im0gMzcuNjc4NTcsMzU3LjcxOTMxIC0wLjk1MTUzNSwtMC41ODgzIC0xLjAyNDA2NiwwLjQ1MDM0IDAuMjY1NDY0LC0xLjA4Njc2IC0wLjc0NDc1LC0wLjgzNDc4IDEuMTE1NjAyLC0wLjA4MzMgMC41NjM3ODUsLTAuOTY2MjcgMC40MjQwMTUsMS4wMzUyNSAxLjA5MzE4OCwwLjIzNzYgLTAuODUzNTQ1LDAuNzIzMTcgeiIgaWQ9InBhdGgzNjg0LTAtNC0xIiBzdHlsZT0iZmlsbDojZmZmZjAwO2ZpbGwtb3BhY2l0eToxOyIvPjxwYXRoIHRyYW5zZm9ybT0ibWF0cml4KDEuMTkyMzA5OCwtMC4wODI4ODE1MywwLjA4MDgyNTY2LDEuMjIyNjM3Miw0NS43Mzg4MiwtNjYuMjY2MjE1KSIgZD0ibSAzNy42Nzg1NywzNTcuNzE5MzEgLTAuOTUxNTM1LC0wLjU4ODMgLTEuMDI0MDY2LDAuNDUwMzQgMC4yNjU0NjQsLTEuMDg2NzYgLTAuNzQ0NzUsLTAuODM0NzggMS4xMTU2MDIsLTAuMDgzMyAwLjU2Mzc4NSwtMC45NjYyNyAwLjQyNDAxNSwxLjAzNTI1IDEuMDkzMTg4LDAuMjM3NiAtMC44NTM1NDUsMC43MjMxNyB6IiBpZD0icGF0aDM2ODQtMC05LTgtNyIgc3R5bGU9ImZpbGw6I2ZmZmYwMDtmaWxsLW9wYWNpdHk6MTsiLz48cGF0aCB0cmFuc2Zvcm09Im1hdHJpeCgxLjE5MjMwOTgsLTAuMDgyODgxNTMsMC4wODA4MjU2NiwxLjIyMjYzNzIsNzAuODAxMzIsLTYwLjAxNjIxNSkiIGQ9Im0gMzcuNjc4NTcsMzU3LjcxOTMxIC0wLjk1MTUzNSwtMC41ODgzIC0xLjAyNDA2NiwwLjQ1MDM0IDAuMjY1NDY0LC0xLjA4Njc2IC0wLjc0NDc1LC0wLjgzNDc4IDEuMTE1NjAyLC0wLjA4MzMgMC41NjM3ODUsLTAuOTY2MjcgMC40MjQwMTUsMS4wMzUyNSAxLjA5MzE4OCwwLjIzNzYgLTAuODUzNTQ1LDAuNzIzMTcgeiIgaWQ9InBhdGgzNjg0LTAtMSIgc3R5bGU9ImZpbGw6I2ZmZmYwMDtmaWxsLW9wYWNpdHk6MTsiLz48cGF0aCB0cmFuc2Zvcm09Im1hdHJpeCgxLjE5MjMwOTgsLTAuMDgyODgxNTMsMC4wODA4MjU2NiwxLjIyMjYzNzIsNTEuNzM4ODIsLTYwLjAxNjIxNSkiIGQ9Im0gMzcuNjc4NTcsMzU3LjcxOTMxIC0wLjk1MTUzNSwtMC41ODgzIC0xLjAyNDA2NiwwLjQ1MDM0IDAuMjY1NDY0LC0xLjA4Njc2IC0wLjc0NDc1LC0wLjgzNDc4IDEuMTE1NjAyLC0wLjA4MzMgMC41NjM3ODUsLTAuOTY2MjcgMC40MjQwMTUsMS4wMzUyNSAxLjA5MzE4OCwwLjIzNzYgLTAuODUzNTQ1LDAuNzIzMTcgeiIgaWQ9InBhdGgzNjg0LTAtOS0xIiBzdHlsZT0iZmlsbDojZmZmZjAwO2ZpbGwtb3BhY2l0eToxOyIvPjxwYXRoIHRyYW5zZm9ybT0ibWF0cml4KDEuMTkyMzA5OCwtMC4wODI4ODE1MywwLjA4MDgyNTY2LDEuMjIyNjM3Miw2MS4yNzAwNywtNTcuMTQxMjE1KSIgZD0ibSAzNy42Nzg1NywzNTcuNzE5MzEgLTAuOTUxNTM1LC0wLjU4ODMgLTEuMDI0MDY2LDAuNDUwMzQgMC4yNjU0NjQsLTEuMDg2NzYgLTAuNzQ0NzUsLTAuODM0NzggMS4xMTU2MDIsLTAuMDgzMyAwLjU2Mzc4NSwtMC45NjYyNyAwLjQyNDAxNSwxLjAzNTI1IDEuMDkzMTg4LDAuMjM3NiAtMC44NTM1NDUsMC43MjMxNyB6IiBpZD0icGF0aDM2ODQtNSIgc3R5bGU9ImZpbGw6I2ZmZmYwMDtmaWxsLW9wYWNpdHk6MTsiLz48L2c+PGcgaWQ9ImRrIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxLjgyMzIyMzMsNy40MTQyMTM2KSI+PGcgaWQ9InRleHQzOTI3IiB0cmFuc2Zvcm09Im1hdHJpeCgwLjg4ODA0ODAzLDAsMCwxLjEyNjA2NTIsNTIuNjE2MjQsLTQuNTA4ODUpIj48cGF0aCBpZD0icGF0aDM5MzIiIGQ9Im0gNzIuMTY0OTQyLDM3NC41NzgzNyAwLC0yMS40MzExIDcuMzgyNDcyLDAgYyAxLjY2NjUyNywyZS01IDIuOTM4MzU4LDAuMTAyMzYgMy44MTU0OTYsMC4zMDcgMS4yMjc5NiwwLjI4MjY1IDIuMjc1NjM3LDAuNzk0MyAzLjE0MzAzMiwxLjUzNDk3IDEuMTMwNSwwLjk1NTExIDEuOTc1OTUsMi4xNzU3NyAyLjUzNjM1NCwzLjY2MTk5IDAuNTYwMzY2LDEuNDg2MjYgMC44NDA1NTksMy4xODQ0NyAwLjg0MDU3OSw1LjA5NDY0IC0yZS01LDEuNjI3NTYgLTAuMTkwMDY0LDMuMDY5OTUgLTAuNTcwMTMyLDQuMzI3MTUgLTAuMzgwMTA2LDEuMjU3MjIgLTAuODY3Mzk4LDIuMjk3NTkgLTEuNDYxODc1LDMuMTIxMTEgLTAuNTk0NTE0LDAuODIzNTIgLTEuMjQ1MDQ4LDEuNDcxNjIgLTEuOTUxNjA0LDEuOTQ0MjkgLTAuNzA2NTg5LDAuNDcyNjggLTEuNTU5MzQ5LDAuODMwODMgLTIuNTU4MjgzLDEuMDc0NDggLTAuOTk4OTYsMC4yNDM2NSAtMi4xNDY1MzIsMC4zNjU0NyAtMy40NDI3MTcsMC4zNjU0NyB6IG0gMi44MzYwMzksLTIuNTI5MDUgNC41NzU2NzEsMCBjIDEuNDEzMTM1LDEwZS02IDIuNTIxNzIzLC0wLjEzMTU2IDMuMzI1NzY3LC0wLjM5NDcgMC44MDQwMTgsLTAuMjYzMTQgMS40NDQ4MDYsLTAuNjMzNDggMS45MjIzNjYsLTEuMTExMDMgMC42NzI0NDcsLTAuNjcyNDYgMS4xOTYyODYsLTEuNTc2MzggMS41NzE1MTcsLTIuNzExNzggMC4zNzUxOTcsLTEuMTM1MzggMC41NjI4MDUsLTIuNTExOTggMC41NjI4MjIsLTQuMTI5OCAtMS43ZS01LC0yLjI0MTUzIC0wLjM2NzkyMiwtMy45NjQxIC0xLjEwMzcxNiwtNS4xNjc3MyAtMC43MzU4MjYsLTEuMjAzNTkgLTEuNjMwMDA2LC0yLjAxMDA2IC0yLjY4MjU0MiwtMi40MTk0IC0wLjc2MDE4OCwtMC4yOTIzNiAtMS45ODMyODksLTAuNDM4NTQgLTMuNjY5MzA4LC0wLjQzODU2IGwgLTQuNTAyNTc3LDAgeiIgc3R5bGU9ImZpbGw6I2ZmZmZmZjtmaWxsLW9wYWNpdHk6MTtzdHJva2U6I2ZmZmZmZjtzdHJva2Utd2lkdGg6MS41O3N0cm9rZS1taXRlcmxpbWl0OjQ7c3Ryb2tlLWRhc2hhcnJheTpub25lO3N0cm9rZS1vcGFjaXR5OjEiLz48L2c+PGcgdHJhbnNmb3JtPSJzY2FsZSgwLjg4NDYzNjUsMS4xMzA0MDc4KSIgaWQ9InRleHQzOTM0Ij48cGF0aCBkPSJtIDE3NC4yMjc3NSwzNjkuMTgxODUgLTMuNzUxMzYsMCAtOC41OTc0NywtOS42Nzc2MyAtMi4xNjAzMiwyLjMwNjI5IDAsNy4zNzEzNCAtMi44OTAxNSwwIDAsLTIxLjczNDUyIDIuODkwMTUsMCAwLDExLjM0MTY1IDEwLjU1MzQ0LC0xMS4zNDE2NSAzLjUwMzIxLDAgLTkuNzA2ODIsMTAuMjE3NzEgMTAuMTU5MzIsMTEuNTE2ODEgeiIgc3R5bGU9ImZpbGw6I2ZmZmZmZjtzdHJva2U6I2ZmZmZmZjtzdHJva2Utd2lkdGg6MS40NTkwNjM0MSIgaWQ9InBhdGgzMzg4Ii8+PC9nPjwvZz48L2c+PC9zdmc+);
+         background-repeat: no-repeat;
+         font-family: 'Segoe UI', Arial, sans-serif;
+         font-size: 100px;
+         line-height: 110px;
+         font-weight: bold;
+         text-transform: uppercase;
+         text-align: center;
+         padding-left: 60px;
+         padding-bottom: 10px;
+         width: 510px;
+         border: 5px solid white;;
+         border-radius: 15px;
+         outline: none;
+         }
+         .center{
+         text-align: center
+         }
+         .fade-in-image {
+         animation: fadeIn 0.5s;
+         -webkit-animation: fadeIn 0.5s;
+         -moz-animation: fadeIn 0.5s;
+         -o-animation: fadeIn 0.5s;
+         -ms-animation: fadeIn 0.5s;
+         }
+         @keyframes fadeIn {
+         0% { opacity: 0; }
+         100% { opacity: 1; }
+         }
+         @-moz-keyframes fadeIn {
+         0% { opacity: 0; }
+         100% { opacity: 1; }
+         }
+         @-webkit-keyframes fadeIn {
+         0% { opacity: 0; }
+         100% { opacity: 1; }
+         }
+         @-o-keyframes fadeIn {
+         0% { opacity: 0; }
+         100% { opacity: 1; }
+         }
+         @-ms-keyframes fadeIn {
+         0% { opacity: 0; }
+         100% { opacity: 1; }
+         }
+      </style>
+   </head>
+   <body>
+      <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+         <div class="container-fluid">
+            <a class="navbar-brand" href="#">Nummerplade oplysninger</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                     <a class="nav-link active" aria-current="page" href="#">Hjem</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                     Dropdown
+                     </a>
+                     <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li>
+                           <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                     </ul>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+      <!-- Hero -->
+      <div class="p-5 text-center bg-image fade-in-image" style="
+         background-position: center; /* Center the image */
+         background-repeat: no-repeat; /* Do not repeat the image */
+         background-size: cover;
+         background-image: url('https://tideo.dk/casperbil.webp')">
+         <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+            <div class="d-flex justify-content-center align-items-center h-100">
+               <div class="px-4 py-5 my-5 text-center">
+                  <center>
+                     <h3 class="fw-bold" style="color: white;">Indtast en nummerplade for at få flere oplysninger om køretøjet</h3>
+                  </center>
+                  <div class="col-lg-6 mx-auto">
+                     <div class="inline-flex">
+                        <form style="margin-top: 10px;" method="POST" action="">
+                           <input class="licenseplate" type="text submit" name="input_text" maxlength="7"    placeholder="{{ answer[2] }} AB 1234"/>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      </div>
+      {% if answer %}
+      <div style="margin-top: 25px;" class="container fade-in-image">
+         <div class="row">
+            <div class="col-3">
+               <div class="card">
+                  <div class="card-header">
+                     <center>
+                        <i class="fa-solid fa-certificate fa-5x center"></i>
+                        <p style="margin-top: 5px;">Stelnummer</p>
+                     </center>
+                  </div>
+                  <div class="card-body">
+                     <center>
+                        <p style="font-weight: bold; font-size: 20px;">{{ answer[9] }}</p>
+                     </center>
+                  </div>
+               </div>
+            </div>
+            <div class="col-3">
+               <div class="card">
+                  <div class="card-header">
+                     <center>
+                        <i class="fa-solid fa-square-check fa-5x center"></i>
+                        <p style="margin-top: 5px;">Status</p>
+                     </center>
+                  </div>
+                  <div class="card-body">
+                     <center>
+                        <p style="font-weight: bold; font-size: 20px;">{{ answer[1] }}</p>
+                     </center>
+                  </div>
+               </div>
+            </div>
+            <div class="col-3">
+               <div class="card">
+                  <div class="card-header">
+                     <center>
+                        <i class="fa-solid fa-car fa-5x center"></i>
+                        <p style="margin-top: 5px;">Type af køretøj</p>
+                     </center>
+                  </div>
+                  <div class="card-body">
+                     <center>
+                        <p style="font-weight: bold; font-size: 20px;">{{ answer[0] }}</p>
+                     </center>
+                  </div>
+               </div>
+            </div>
+            <div class="col-3">
+               <div class="card">
+                  <div class="card-header">
+                     <center>
+                        <i class="fa-solid fa-car-side fa-5x center"></i>
+                        <p style="margin-top: 5px;">Mærke og model</p>
+                     </center>
+                  </div>
+                  <div class="card-body">
+                     <center>
+                        <p style="font-weight: bold; font-size: 20px;">{{ answer[3] }} {{ answer[4] }}</p>
+                     </center>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div style="margin-top: 15px;" class="container fade-in-image">
+         <div class="row">
+            <div class="col-3">
+               <div class="card">
+                  <div class="card-header">
+                     <center>
+                        <i class="fa-solid fa-gear fa-5x center"></i>
+                        <p style="margin-top: 5px;">Variant</p>
+                     </center>
+                  </div>
+                  <div class="card-body">
+                     <center>
+                        <p style="font-weight: bold; font-size: 20px;">{{ answer[5] }}</p>
+                     </center>
+                  </div>
+               </div>
+            </div>
+            <div class="col-3">
+               <div class="card">
+                  <div class="card-header">
+                     <center>
+                        <i class="fa-solid fa-industry fa-5x"></i></i>
+                        <p style="margin-top: 5px;">Model årgang</p>
+                     </center>
+                  </div>
+                  <div class="card-body">
+                     <center>
+                        <p style="font-weight: bold; font-size: 20px;">{{ answer[6] }}</p>
+                     </center>
+                  </div>
+               </div>
+            </div>
+            <div class="col-3">
+               <div class="card">
+                  <div class="card-header">
+                     <center>
+                        <i class="fa-solid fa-check fa-5x center"></i>
+                        <p style="margin-top: 5px;">Første registreringsdato</p>
+                     </center>
+                  </div>
+                  <div class="card-body">
+                     <center>
+                        <p style="font-weight: bold; font-size: 20px;">{{ answer[13] }}</p>
+                     </center>
+                  </div>
+               </div>
+            </div>
+            <div class="col-3">
+               <div class="card">
+                  <div class="card-header">
+                     <center>
+                        <i class="fa-solid fa-money-bill fa-5x"></i>
+                        <p style="margin-top: 5px;">Leased eller ej</p>
+                     </center>
+                  </div>
+                  <div class="card-body">
+                     <center>
+                        <p style="font-weight: bold; font-size: 20px;">{{ answer[7] }}</p>
+                     </center>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div style="margin-top: 15px;" class="container fade-in-image">
+         <div class="row">
+            <div class="col-3">
+               <div class="card">
+                  <div class="card-header">
+                     <center>
+                        <i class="fa-solid fa-road fa-5x"></i></i>
+                        <p style="margin-top: 5px;">Antal kilometer</p>
+                     </center>
+                  </div>
+                  <div class="card-body">
+                     <center>
+                        <p style="font-weight: bold; font-size: 20px;">{{ answer[10] }} kilometer</p>
+                     </center>
+                  </div>
+               </div>
+            </div>
+            <div class="col-3">
+               <div class="card">
+                  <div class="card-header">
+                     <center>
+                        <i class="fa-solid fa-gauge fa-5x"></i>
+                        <p style="margin-top: 5px;">Estimeret årlig kørte kilometer</p>
+                     </center>
+                  </div>
+                  <div class="card-body">
+                     <center>
+                        <p style="font-weight: bold; font-size: 20px;">{{ answer[11] }} kilometer</p>
+                     </center>
+                  </div>
+               </div>
+            </div>
+            <div class="col-3">
+               <div class="card">
+                  <div class="card-header">
+                     <center>
+                        <i class="fa-solid fa-circle-info fa-5x center"></i>
+                        <p style="margin-top: 5px;">Sidste syns dato</p>
+                     </center>
+                  </div>
+                  <div class="card-body">
+                     <center>
+                        <p style="font-weight: bold; font-size: 20px;">{{ answer[12] }}</p>
+                     </center>
+                  </div>
+               </div>
+            </div>
+            <div class="col-3">
+               <div class="card">
+                  <div class="card-header">
+                     <center>
+                        <i class="fa-solid fa-calendar-days fa-5x center"></i>
+                        <p style="margin-top: 5px;">Status af syn</p>
+                     </center>
+                  </div>
+                  <div style="height: 80px;" class="card-body">
+                     <center>
+                        <p style="font-weight: bold; font-size: 20px;">{{ answer[8] }}</p>
+                        <br>
+                        <p style="font-size: 12px; margin-top: -40px;"><a href="{{ answer[14] }}">Tryk her for at se syns rapport</p>
+                        </a>
+                     </center>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      {% endif %}
+      <!-- Bootstrap Javascripts -->  
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+      <script>
+         var input = document.getElementById("input_text");
+         input.addEventListener("keypress", function(event) {
+           if (event.key === "Enter") {
+             event.preventDefault();
+             document.getElementById("myBtn").click();
+           }
+         });
+      </script>
+   </body>
+</html>
+</html>

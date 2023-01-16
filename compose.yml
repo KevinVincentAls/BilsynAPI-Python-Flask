@@ -1,0 +1,9 @@
+version: '2'
+services:
+  CASPER:
+    image: casper:latest
+    restart: unless-stopped
+    volumes:
+      - ./logs:/logs
+    ports: 
+       - '5000:5000'
