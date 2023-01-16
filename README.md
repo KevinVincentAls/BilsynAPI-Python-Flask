@@ -1,5 +1,5 @@
 # BilsynAPI-Python-Flask
-a web application using the bilsyn API to fetch information about danish license plates. Displayed on a bootstrap html page. 
+A web application using the bilsyn API to fetch information about danish license plates. Displayed on a bootstrap html page. 
 
 
 Can be run with:
