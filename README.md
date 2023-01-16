@@ -1,5 +1,5 @@
 # BilsynAPI-Python-Flask
-The code behind docker image https://hub.docker.com/r/xkaas/bilapi, a web application using the bilsyn API to fetch information about danish license plates
+A web application using the bilsyn API to fetch information about danish license plates. Displayed on a bootstrap html page. 
 
 
 Can be run with:
