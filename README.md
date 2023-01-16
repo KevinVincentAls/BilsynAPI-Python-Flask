@@ -11,4 +11,4 @@ services:
     environment:
        - token=<insert bearer token here>
     ports: 
-       - '5000:5000'´´´
+       - '5000:5000'
