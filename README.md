@@ -21,7 +21,7 @@ services:
     restart: always
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    command: --interval 30 --scope bilsynapi
+    command: --interval 30 --cleanup --scope bilsynapi
     labels:
       - "com.centurylinklabs.watchtower.scope=bilsynapi"
 
