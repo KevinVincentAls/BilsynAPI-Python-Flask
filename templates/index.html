@@ -22,13 +22,9 @@
          padding-left: 60px;
          padding-bottom: 10px;
          width: 510px;
-         border: 5px solid red;;
+         border: 5px solid white;;
          border-radius: 15px;
          outline: none;
-         }
-         .Vinnumber {
-         font-size: 25px;
-         font-display: center;
          }
          .center{
          text-align: center
@@ -62,7 +58,7 @@
          }
       </style>
    </head>
-   <body style="background-color: #192840;">
+   <body>
       <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
          <div class="container-fluid">
             <a class="navbar-brand" href="#">Nummerplade oplysninger</a>
@@ -86,9 +82,8 @@
          background-position: center; /* Center the image */
          background-repeat: no-repeat; /* Do not repeat the image */
          background-size: cover;
-         background-color: #192840;
-         border-radius: 25px">
-         <div class="mask" style="background-color: grey;">
+         background-image: url('https://tideo.dk/casperbil.webp')">
+         <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
             <div class="d-flex justify-content-center align-items-center h-100">
                <div class="px-4 py-5 my-5 text-center">
                   <center>
@@ -97,10 +92,7 @@
                      <div class="inline-flex">
                         <form style="margin-top: 10px;" method="POST" action="">
                            <input class="licenseplate" type="text submit" name="input_text" maxlength="7"    placeholder="{{ answer[2] }} AB 1234"/>
-                           <h5 class="fw-bold" style="color: white;">Eller indtast et Vin nummer</h5>
-                           <input class="Vinnumber" type="text submit" name="input_text" maxlength="17" placeholder="Vin nummer"/>
                         </form>
-
                      </div>
                   </div>
                </center>
@@ -113,61 +105,61 @@
       <div style="margin-top: 25px;" class="container fade-in-image">
          <div class="row">
             <div class="col-3">
-               <div class="card" style="background-color: grey;">
+               <div class="card">
                   <div class="card-header">
                      <center>
                         <i class="fa-solid fa-certificate fa-5x center"></i>
-                        <p style="margin-top: 5px; color: white;">Stelnummer</p>
+                        <p style="margin-top: 5px;">Stelnummer</p>
                      </center>
                   </div>
                   <div class="card-body">
                      <center>
-                        <p style="font-weight: bold; font-size: 20px; color: white;">{{ answer[9] }}</p>
+                        <p style="font-weight: bold; font-size: 20px;">{{ answer[9] }}</p>
                      </center>
                   </div>
                </div>
             </div>
             <div class="col-3">
-               <div class="card" style="background-color: grey;">
+               <div class="card">
                   <div class="card-header">
                      <center>
                         <i class="fa-solid fa-square-check fa-5x center"></i>
-                        <p style="margin-top: 5px; color: white;">Status</p>
+                        <p style="margin-top: 5px;">Status</p>
                      </center>
                   </div>
                   <div class="card-body">
                      <center>
-                        <p style="font-weight: bold; font-size: 20px; color: white;">{{ answer[1] }}</p>
+                        <p style="font-weight: bold; font-size: 20px;">{{ answer[1] }}</p>
                      </center>
                   </div>
                </div>
             </div>
             <div class="col-3">
-               <div class="card" style="background-color: grey;">
+               <div class="card">
                   <div class="card-header">
                      <center>
                         <i class="fa-solid fa-car fa-5x center"></i>
-                        <p style="margin-top: 5px; color: white;">Type af køretøj</p>
+                        <p style="margin-top: 5px;">Type af køretøj</p>
                      </center>
                   </div>
                   <div class="card-body">
                      <center>
-                        <p style="font-weight: bold; font-size: 20px; color: white;">{{ answer[0] }}</p>
+                        <p style="font-weight: bold; font-size: 20px;">{{ answer[0] }}</p>
                      </center>
                   </div>
                </div>
             </div>
             <div class="col-3">
-               <div class="card" style="background-color: grey;">
+               <div class="card">
                   <div class="card-header">
                      <center>
                         <i class="fa-solid fa-car-side fa-5x center"></i>
-                        <p style="margin-top: 5px; color: white;">Mærke og model</p>
+                        <p style="margin-top: 5px;">Mærke og model</p>
                      </center>
                   </div>
                   <div class="card-body">
                      <center>
-                        <p style="font-weight: bold; font-size: 20px; color: white;">{{ answer[3] }} {{ answer[4] }}</p>
+                        <p style="font-weight: bold; font-size: 20px;">{{ answer[3] }} {{ answer[4] }}</p>
                      </center>
                   </div>
                </div>
@@ -177,61 +169,61 @@
       <div style="margin-top: 15px;" class="container fade-in-image">
          <div class="row">
             <div class="col-3">
-               <div class="card" style="background-color: grey;">
+               <div class="card">
                   <div class="card-header">
                      <center>
                         <i class="fa-solid fa-gear fa-5x center"></i>
-                        <p style="margin-top: 5px; color: white;">Variant</p>
+                        <p style="margin-top: 5px;">Variant</p>
                      </center>
                   </div>
                   <div class="card-body">
                      <center>
-                        <p style="font-weight: bold; font-size: 20px; color: white;">{{ answer[5] }}</p>
+                        <p style="font-weight: bold; font-size: 20px;">{{ answer[5] }}</p>
                      </center>
                   </div>
                </div>
             </div>
             <div class="col-3">
-               <div class="card" style="background-color: grey;">
+               <div class="card">
                   <div class="card-header">
                      <center>
                         <i class="fa-solid fa-industry fa-5x"></i></i>
-                        <p style="margin-top: 5px; color: white;">Model årgang</p>
+                        <p style="margin-top: 5px;">Model årgang</p>
                      </center>
                   </div>
                   <div class="card-body">
                      <center>
-                        <p style="font-weight: bold; font-size: 20px; color: white;">{{ answer[6] }}</p>
+                        <p style="font-weight: bold; font-size: 20px;">{{ answer[6] }}</p>
                      </center>
                   </div>
                </div>
             </div>
             <div class="col-3">
-               <div class="card" style="background-color: grey;">
+               <div class="card">
                   <div class="card-header">
                      <center>
                         <i class="fa-solid fa-check fa-5x center"></i>
-                        <p style="margin-top: 5px; color: white;">Første registreringsdato</p>
+                        <p style="margin-top: 5px;">Første registreringsdato</p>
                      </center>
                   </div>
                   <div class="card-body">
                      <center>
-                        <p style="font-weight: bold; font-size: 20px; color: white;">{{ answer[13] }}</p>
+                        <p style="font-weight: bold; font-size: 20px;">{{ answer[13] }}</p>
                      </center>
                   </div>
                </div>
             </div>
             <div class="col-3">
-               <div class="card" style="background-color: grey;">
+               <div class="card">
                   <div class="card-header">
                      <center>
                         <i class="fa-solid fa-money-bill fa-5x"></i>
-                        <p style="margin-top: 5px; color: white;">Leased eller ej</p>
+                        <p style="margin-top: 5px;">Leased eller ej</p>
                      </center>
                   </div>
                   <div class="card-body">
                      <center>
-                        <p style="font-weight: bold; font-size: 20px; color: white;">{{ answer[7] }}</p>
+                        <p style="font-weight: bold; font-size: 20px;">{{ answer[7] }}</p>
                      </center>
                   </div>
                </div>
@@ -241,61 +233,61 @@
       <div style="margin-top: 15px;" class="container fade-in-image">
          <div class="row">
             <div class="col-3">
-               <div class="card" style="background-color: grey;">
+               <div class="card">
                   <div class="card-header">
                      <center>
                         <i class="fa-solid fa-road fa-5x"></i></i>
-                        <p style="margin-top: 5px; color: white;">Antal kilometer</p>
+                        <p style="margin-top: 5px;">Antal kilometer</p>
                      </center>
                   </div>
                   <div class="card-body">
                      <center>
-                        <p style="font-weight: bold; font-size: 20px; color: white;">{{ answer[10] }} kilometer</p>
+                        <p style="font-weight: bold; font-size: 20px;">{{ answer[10] }} kilometer</p>
                      </center>
                   </div>
                </div>
             </div>
             <div class="col-3">
-               <div class="card" style="background-color: grey;">
+               <div class="card">
                   <div class="card-header">
                      <center>
                         <i class="fa-solid fa-gauge fa-5x"></i>
-                        <p style="margin-top: 5px; color: white;">Estimeret årlig kørte kilometer</p>
+                        <p style="margin-top: 5px;">Estimeret årlig kørte kilometer</p>
                      </center>
                   </div>
                   <div class="card-body">
                      <center>
-                        <p style="font-weight: bold; font-size: 20px; color: white;">{{ answer[11] }} kilometer</p>
+                        <p style="font-weight: bold; font-size: 20px;">{{ answer[11] }} kilometer</p>
                      </center>
                   </div>
                </div>
             </div>
             <div class="col-3">
-               <div class="card" style="background-color: grey;">
+               <div class="card">
                   <div class="card-header">
                      <center>
                         <i class="fa-solid fa-circle-info fa-5x center"></i>
-                        <p style="margin-top: 5px; color: white;">Sidste syns dato</p>
+                        <p style="margin-top: 5px;">Sidste syns dato</p>
                      </center>
                   </div>
                   <div class="card-body">
                      <center>
-                        <p style="font-weight: bold; font-size: 20px; color: white;">{{ answer[12] }}</p>
+                        <p style="font-weight: bold; font-size: 20px;">{{ answer[12] }}</p>
                      </center>
                   </div>
                </div>
             </div>
             <div class="col-3">
-               <div class="card" style="background-color: grey;">
+               <div class="card">
                   <div class="card-header">
                      <center>
                         <i class="fa-solid fa-calendar-days fa-5x center"></i>
-                        <p style="margin-top: 5px; color: white;">Status af syn</p>
+                        <p style="margin-top: 5px;">Status af syn</p>
                      </center>
                   </div>
                   <div style="height: 80px;" class="card-body">
                      <center>
-                        <p style="font-weight: bold; font-size: 20px; color: white;">{{ answer[8] }}</p>
+                        <p style="font-weight: bold; font-size: 20px;">{{ answer[8] }}</p>
                         <br>
                         <p style="font-size: 12px; margin-top: -40px;"><a href="{{ answer[14] }}">Tryk her for at se syns rapport</p>
                         </a>
