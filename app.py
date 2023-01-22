@@ -3,7 +3,7 @@ from motor import nummerplade
 import os
 app = Flask(__name__)
 
-#buildtag = os.environ['BUILDTAG']
+buildtag = os.environ['BUILDTAG']
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -15,7 +15,7 @@ def index():
         
         answer = numberplate
         
-    return render_template('index.html', answer=answer, type=type) #, buildtag=buildtag
+    return render_template('index.html', answer=answer, type=type, buildtag=buildtag)
 
 
 if __name__ == '__main__':

@@ -13,8 +13,8 @@ logging.basicConfig(level=logging.DEBUG,
 
 
 def nummerplade(query):
-    #token = os.environ['token']
-    token = 'sb_sk_91ec442399a0439eb5708e61c8c28c0e'
+    token = os.environ['token']
+    
     headers = \
         {'Authorization': 'Bearer ' + token}
     r = \
