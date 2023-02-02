@@ -14,7 +14,6 @@ logging.basicConfig(level=logging.DEBUG,
 
 def nummerplade(query):
     token = os.environ['token']
-    
     headers = \
         {'Authorization': 'Bearer ' + token}
     r = \
